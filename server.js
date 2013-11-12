@@ -101,12 +101,21 @@ app.delete('/api/todos/:todo_id', function(req, res) {
 });
 
 //=============Defining Frontend Route=============
-// application -------------------------------------------------------------
-app.get('*', function(req, res) {
+// todo application -------------------------------------------------------------
+app.get('/node-todo', function(req, res) {
     res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
 });
 
+// todo application -------------------------------------------------------------
+app.get('/simpleapp', function(req, res) {
+    res.sendfile('./public/index2.html'); // load the single view file (angular will handle the page changes on the front-end)
+});
+
 // listen (start app with node server.js) ======================================
-app.listen(process.env.PORT);
+var port = process.env.PORT || 8080;
+app.listen(port, function() {
+    console.log("Listening on " + port);
+});
+
 //app.listen(8080);
-console.log("App listening on port 8080");
+//console.log("App listening on port 8080");

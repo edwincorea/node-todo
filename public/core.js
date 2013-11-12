@@ -1,5 +1,5 @@
 
-var ngModuleTodo = angular.module('ngModuleTodo', []);
+var ngModuleTodoApp = angular.module('ngModuleTodoApp', []);
 
 function mainController($scope, $http) {
     $scope.formData = {};
